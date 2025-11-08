@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import UserContext from './UserContext';
+import UserContext from '../UserContext';
 
 function UserDetails() {
 
@@ -10,7 +10,7 @@ function UserDetails() {
             <p>Name: {userData.name}</p>
             <p>Email: {userData.email}</p>
         </div>
-    );
+    )
 }
 
 export default UserDetails;
