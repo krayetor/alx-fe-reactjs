@@ -33,7 +33,7 @@ function App() {
         </Routes>
       </main>
 
-      <footer />
+      <Footer />
     </div>
   );
 }
