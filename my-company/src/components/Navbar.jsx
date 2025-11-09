@@ -5,7 +5,7 @@ function Navbar() {
         backgroundColor: '#333',
         padding: '1rem',
         display: 'flex',
-        justify: 'center',
+        justifyContent: 'center',
         gap: '1rem',
     };
 
