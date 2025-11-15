@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import RecipeDetials from "./components/RecipeDetails";
 import AddRecipeForm from "./components/AddRecipeForm";
 import RecipeList from "./components/RecipeList";
@@ -7,7 +7,8 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
       <header>
         <h1>My Recipe Book</h1>
       </header>
@@ -29,7 +30,9 @@ function App() {
 
         </Routes>
       </main>
-    </div>
+
+      </div>
+    </Router>
   );
 }
 
