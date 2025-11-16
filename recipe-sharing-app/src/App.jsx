@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import RecipeDetials from "./components/RecipeDetails";
+import RecipeDetails from "./components/RecipeDetails";
 import AddRecipeForm from "./components/AddRecipeForm";
 import RecipeList from "./components/RecipeList";
+import SearchBar from "./components/SearchBar";
 import './App.css';
 
 function App() {
@@ -20,13 +21,14 @@ function App() {
             path="/"
             element={
               <>
+                <SearchBar />
                 <AddRecipeForm />
                 <RecipeList />
               </>
             }
           />
 
-          <Route path="/recipe/:recipeId" element={<RecipeDetials />} />
+          <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
 
         </Routes>
       </main>

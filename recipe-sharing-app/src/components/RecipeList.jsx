@@ -1,19 +1,27 @@
 // RecipeList component
 
-import React from 'react';
-import { recipeStore } from './recipeStore';
+import React, { use } from 'react';
+import { useRecipeStore } from './recipeStore';
 import { Link } from 'react-router-dom';
 
 const RecipeList = () => {
-    const recipes = recipeStore(state => state.recipes);
+    // get both lists and the search term
+    const recipes = useRecipeStore(state => state.recipes);
+    const filteredRecipes = useRecipeStore(state => state.filteredRecipes);
+    const searchTerm = useRecipeStore(state => state.searchTerm);
+
+    // decide which list to show.
+    // on first load, filteredRecipes is empty, so we check recipes.
+    // after any action, filteredRecipes is the correct list to use.
+    const listToShow = (searchTerm || filteredRecipes.length > 0) ? filteredRecipes : recipes;
 
     return (
-        <div>
+        <div style={{ width: '100%' }}>
             <h2>Recipe List</h2>
-            {recipes.length === 0 ? (
-                <p>No recipe yet. Try adding one!</p>
+            {listToShow.length === 0 ? (
+                <p>{searchTerm ? 'No recipes match your search.' : 'No recipes yet. Try adding one!'}</p>
             ) : (
-                recipes.map(recipe => (
+                listToShow.map(recipe => (
                     <div key={recipe.id} style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }}>
                         <Link to={`/recipe/${recipe.id}`}>
                             <h3>{recipe.title}</h3>
