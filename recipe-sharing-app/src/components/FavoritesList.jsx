@@ -19,7 +19,7 @@ const FavoritesList = () => {
                 <p>You haven't favorited any recipes yet.</p>
             ) : (
                 favoriteRecipes.map(recipe => (
-                    <div key={recipe.id} style={{ border: '1px solid #ccc', margin: '10px 0', padding: '10px' }}>
+                    <div key={recipe.id} className="recipe-card">
                         <Link to={`/recipe/${recipe.id}`}>
                             <h3>{recipe.title}</h3>
                         </Link>

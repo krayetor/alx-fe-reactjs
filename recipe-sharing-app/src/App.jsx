@@ -12,42 +12,42 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <header>
-        <h1>My Recipe Book</h1>
-        {/* add a nav link */}
-        <nav style={{ marginTop: '10px'}}>
-          <Link to="/" style={{ marginRight: '10px' }}>Home</Link>
-          <Link to="/favorites">My Favorites</Link>
-        </nav>
-      </header>
+        <header>
+          <h1>My Recipe Book</h1>
+          { /* add a nav link */}
+          <nav style={{ marginTop: '10px'}}>
+            <Link to="/" style={{ marginRight: '10px' }}>Home</Link>
+            <Link to="/favorites">My Favorites</Link>
+          </nav>
+        </header>
 
-      <main>
-        <Routes>
-          {/* Homepage route */}
-          <Route
-            path="/"
-            element={
+        <main>
+          <Routes>
+            {/* Homepage route */}
+            <Route
+              path="/"
+              element={
+                <>
+                  <SearchBar />
+                  <AddRecipeForm />
+                  <RecipeList />
+                </>
+              }
+            />
+
+            {/* detials page route */}
+            <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
+
+            {/* add the new Favorite page route */}
+            <Route path="/favorites" element={
               <>
-                <SearchBar />
-                <AddRecipeForm />
-                <RecipeList />
+                <FavoriteButton />
+                <RecommendationsList />
               </>
-            }
-          />
+            }/>
 
-          {/* detials page route */}
-          <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
-
-          {/* add the new Favorite page route */}
-          <Route path="/favorites" element={
-            <>
-              <FavoriteButton />
-              <RecommendationsList />
-            </>
-          }/>
-
-        </Routes>
-      </main>
+          </Routes>
+        </main>
 
       </div>
     </Router>
