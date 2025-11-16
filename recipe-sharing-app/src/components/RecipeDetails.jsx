@@ -5,6 +5,7 @@ import { useParams, Link } from "react-router-dom";
 import { useRecipeStore } from "./recipeStore";
 import EditRecipeForm from "./EditRecipeForm";
 import DeleteRecipeButton from "./DeleteRecipeButton";
+import FavoriteButton from "./FavoriteButton";
 
 const RecipeDetails = () => {
     const { recipeId } = useParams();
@@ -35,13 +36,10 @@ const RecipeDetails = () => {
                 <div style={{ marginTop: '20px' }}>
                     <h1>{recipe.title}</h1>
                     <p>{recipe.description}</p>
-                    <div style={{
-                        display: 'flex',
-                        gap: '10px',
-                        marginTop: '20px'
-                    }}>
+                    <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
                         <button onClick={() => setIsEditing(true)}>Edit Recipe</button>
-                        <DeleteRecipeButton recipeId={recipe.id}/>
+                        <DeleteRecipeButton recipeId={recipe.id} />
+                        <FavoriteButton recipeId={recipe.id} />
                     </div>
                 </div>
             )}
