@@ -4,7 +4,7 @@ function UserProfile() {
     return (
         <div className="bg-gray-100 md:p-8 sm:p-4 max-w-xs md:max-w-sm d mx-auto my-20 rounded-lg shadow-lg">
             <img
-                className="rounded-full w-24 h-24 sm:w-36 sm:h-36 mx-auto"
+                className="rounded-full sm:w-24 sm:h-24 md:w-36 md:h-36 mx-auto"
                 src="https://via.placeholder.com/150"
                 alt="User"
             />
