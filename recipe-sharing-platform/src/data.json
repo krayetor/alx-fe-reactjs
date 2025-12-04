@@ -3,7 +3,24 @@
         "id": 1,
         "title": "Shaghetti Carbonara",
         "summary": "A classic Italian pasta with eggs, cheese, bacon, and black pepper.",
-        "image": "https://images.unsplash.com/photo-1598511746271-4603099955e8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "image": "https://images.unsplash.com/photo-1598511746271-4603099955e8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
+        "prepTime": "15 minutes",
+        "servings": "4",
+        "ingredients": [
+            "350g spaghetti",
+            "100g pancetta or guanciale",
+            "2 large eggs",
+            "50g Pecorino Romano cheese",
+            "Black pepper (freshly ground)"
+        ],
+        "instructions": [
+            "Cook pasta according to package directions.",
+            "While pasta cooks, crisp the pancetta in a pan.",
+            "Mix eggs, grated cheese, and pepper in a bowl.",
+            "Drain pasta, reserve some water. Toss pasta with pancetta, then quickly stir in the egg mixture off the heat.",
+            "Add pasta water gradually to create a creamy sauce. Serve immediately."
+        ]
     },
     {
         "id": 2,
