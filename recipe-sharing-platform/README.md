@@ -1,16 +1,65 @@
-# React + Vite
+# 🍽️ Recipe Sharing Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive web application for browsing, viewing, and potentially sharing cooking recipes. This project is built using **React** (Vite) and styled with **Tailwind CSS**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Features
 
-## React Compiler
+* **Responsive Layout:** Optimized for mobile, tablet, and desktop views using Tailwind's responsive utilities.
+* **Recipe Index (Home Page):** Displays a scrollable, responsive grid of recipe cards.
+* **Mock Data Integration:** Loads initial recipe data from a static `data.json` file.
+* **Recipe Detail View (Planned):** Dedicated page to show detailed ingredients and instructions.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 💻 Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Category | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Frontend** | React (Vite) | Component-based UI development |
+| **Styling** | Tailwind CSS | Utility-first CSS framework for rapid styling |
+| **Build Tools**| PostCSS, Autoprefixer | Processing and optimizing CSS |
+| **Language** | JavaScript (ES6+) | Core logic and functionality |
+| **Package Mgr**| npm | Dependency management |
+
+---
+
+## ⚙️ Setup and Installation
+
+Follow these steps to set up the development environment.
+
+### Prerequisites
+
+* Node.js (LTS recommended)
+* npm (Node Package Manager)
+
+### Installation Steps
+
+1.  **Clone or Initialize the Project**
+    ```bash
+    # If starting fresh:
+    npm create vite@latest recipe-sharing-platform -- --template react
+    cd recipe-sharing-platform
+    ```
+
+2.  **Install Dependencies**
+    Install all project dependencies, including the necessary PostCSS plugins for Tailwind integration.
+    ```bash
+    npm install
+    npm install -D tailwindcss@3.3.3 postcss autoprefixer postcss-import
+    ```
+
+3.  **Configuration (Critical)**
+    Due to the project's **ES Module** setup, configuration files must use the **`.cjs`** extension and the CommonJS syntax.
+
+    Ensure you have the following **two files** in your root directory:
+    * `postcss.config.cjs`
+    * `tailwind.config.cjs` (or embed its content in the PostCSS file).
+
+## ▶️ Running the Application
+
+Execute the following command in the project root to start the development server:
+
+```bash
+npm run dev
