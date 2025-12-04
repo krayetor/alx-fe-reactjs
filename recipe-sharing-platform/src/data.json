@@ -26,12 +26,48 @@
         "id": 2,
         "title": "Chicken Tikka Masala",
         "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-        "image": "https://images.unsplash.com/photo-1626082894294-b25867a48d88?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "image": "https://images.unsplash.com/photo-1626082894294-b25867a48d88?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
+        "prepTime": "1 hour 30 minutes",
+        "servings": "6",
+        "ingredients": [
+            "1.5 lbs chicken breast, cubed",
+            "1 cup plain yogurt",
+            "1 tbsp ginger-garlic paste",
+            "1 can (15 oz)  tomato sauce",
+            "1 cup heavy cream",
+            "Spices (garam masala, tumeric, chili powder)"
+        ],
+        "instructions": [
+            "Marinate chicken in yogurt, ginger-garlic paste, and spices for at least 30 minutes.",
+            "Grill or bake chicken until cooked.",
+            "Sauté onions and remaining spices in a pan.",
+            "Add tomato sauce and simmer for 15 minutes.",
+            "Stir in heavy cream and cooked chicken. Simmer for 10 minutes. Serve with rice or naan."
+        ]
     },
     {
         "id": 3,
         "title": "Vegetarian Chili",
         "summary": "A hearty, plant-based chili with beans, corn and spicy peppers for a cold day.",
-        "image": "https://images.unsplash.com/photo-1601328734914-1f7484643b4d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "image": "https://images.unsplash.com/photo-1601328734914-1f7484643b4d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
+        "prepTime": "45 minutes",
+        "servings": "8",
+        "ingredients": [
+            "1 large onion, chopped",
+            "2 bell peppers, chopped",
+            "2 cans kidney beans, drained",
+            "1 can corn drained",
+            "1 can crushed tomatoes",
+            "2 tbsp chili powder"
+        ],
+        "instructions": [
+            "Sauté onion and bell peppers until soft.",
+            "Stir in chill powder and other spices.",
+            "Add crushed tomatoes, beans, and corn.",
+            "Bring to a boil, then reduce heat and simmer for 30 minutes, stirring occasionally.",
+            "Serve hot with your choice of toppings (cheese, sour cream, cilantro)."
+        ]
     }
 ]
