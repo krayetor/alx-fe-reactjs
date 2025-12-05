@@ -15,6 +15,15 @@ const HomePage = () => {
                 Discover Delicious Recipes
             </h1>
 
+            {/* button to add recipe form page */}
+            <div className="flex justify-center mb-10">
+                <Link
+                    to="/add-recipe"
+                    className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300 font-semibold shadow-lg">
+                        ➕ Add New Recipe
+                    </Link>
+            </div>
+
             {/* responsive grid layout */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                 {recipes.map((recipe) => (
@@ -23,9 +32,10 @@ const HomePage = () => {
                         className="bg-white rounded-xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-[1.02] overflow-hidden"
                     >
                         <img 
-                            className="w-full h-48 object-cover"
+                            className="w-full h-64 object-cover"
                             src={recipe.image}
                             alt={recipe.title}
+                            style={{ display: 'block', minHeight: '192px' }}
                         />
 
                         <div className="p-6">
