@@ -15,8 +15,8 @@ const AddRecipeForm = () => {
 
     const handleChange = (e) => {
 
-        const { name, value } = e.target;
-        
+        const { name, value } = target.value;
+
         setFormData((prev) => ({ ...prev, [name]: value }));
         if (errors[name]) {
             setErrors((prev) => ({ ...prev, [name]: '' }));
