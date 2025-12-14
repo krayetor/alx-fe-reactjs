@@ -7,8 +7,11 @@ const RegistrationForm = () => {
     password: '',
   });
 
-  const [error, setError] = useState('');
+  // 1. Requirement: Use "setErrors" (plural)
+  const [errors, setErrors] = useState('');
   const [success, setSuccess] = useState(false);
+
+  const { username, email, password } = formData; // Destructure for cleaner access
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,11 +23,20 @@ const RegistrationForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError('');
     setSuccess(false);
+    setErrors(''); // Reset errors
 
-    if (!formData.username || !formData.email || !formData.password) {
-      setError('All fields are required.');
+    // 2. Requirement: Specific validation checks for each field
+    if (!username) {
+      setErrors('Username is required');
+      return;
+    }
+    if (!email) {
+      setErrors('Email is required');
+      return;
+    }
+    if (!password) {
+      setErrors('Password is required');
       return;
     }
 
@@ -32,14 +44,12 @@ const RegistrationForm = () => {
     setSuccess(true);
   };
 
-  // DESTRUCTURE HERE
-  const { username, email, password } = formData;
-
   return (
     <div style={{ border: '1px solid #ccc', padding: '20px', marginBottom: '20px' }}>
       <h2>Controlled Component Form</h2>
       
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {/* Display errors */}
+      {errors && <p style={{ color: 'red' }}>{errors}</p>}
       {success && <p style={{ color: 'green' }}>Registration Successful!</p>}
 
       <form onSubmit={handleSubmit}>
@@ -48,7 +58,7 @@ const RegistrationForm = () => {
           <input
             type="text"
             name="username"
-            value={username} 
+            value={username}
             onChange={handleChange}
           />
         </div>
@@ -58,7 +68,7 @@ const RegistrationForm = () => {
           <input
             type="email"
             name="email"
-            value={email} 
+            value={email}
             onChange={handleChange}
           />
         </div>
@@ -68,7 +78,7 @@ const RegistrationForm = () => {
           <input
             type="password"
             name="password"
-            value={password} 
+            value={password}
             onChange={handleChange}
           />
         </div>
