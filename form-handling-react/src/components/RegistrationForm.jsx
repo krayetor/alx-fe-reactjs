@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 const RegistrationForm = () => {
-  // Manage form state manually
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -11,7 +10,6 @@ const RegistrationForm = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
 
-  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -20,22 +18,22 @@ const RegistrationForm = () => {
     });
   };
 
-  // Handle Submission with Basic Validation
   const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
     setSuccess(false);
 
-    // Basic validation: Check for empty fields
     if (!formData.username || !formData.email || !formData.password) {
       setError('All fields are required.');
       return;
     }
 
-    // Simulate API call
     console.log('Submitting Controlled Form:', formData);
     setSuccess(true);
   };
+
+  // DESTRUCTURE HERE
+  const { username, email, password } = formData;
 
   return (
     <div style={{ border: '1px solid #ccc', padding: '20px', marginBottom: '20px' }}>
@@ -50,7 +48,7 @@ const RegistrationForm = () => {
           <input
             type="text"
             name="username"
-            value={formData.username}
+            value={username} 
             onChange={handleChange}
           />
         </div>
@@ -60,7 +58,7 @@ const RegistrationForm = () => {
           <input
             type="email"
             name="email"
-            value={formData.email}
+            value={email} 
             onChange={handleChange}
           />
         </div>
@@ -70,7 +68,7 @@ const RegistrationForm = () => {
           <input
             type="password"
             name="password"
-            value={formData.password}
+            value={password} 
             onChange={handleChange}
           />
         </div>
