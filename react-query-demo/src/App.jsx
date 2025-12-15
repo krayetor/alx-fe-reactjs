@@ -1,28 +1,18 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
-import PostsComponent from './components/PostComponents';
-import { useState } from 'react';
+import PostsComponent from './components/PostsComponent';
 
-// Create a client
+// 1. Create a client instance
 const queryClient = new QueryClient();
 
 function App() {
-  const [showPosts, setShowPosts] = useState(true);
-
   return (
-    // Provide the client to your App
+    // 2. Wrap your app with the Provider and pass the client
     <QueryClientProvider client={queryClient}>
-      <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-        <h1>React Query Demo</h1>
+      <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+        <h1>React Query Data Fetching</h1>
         
-        {/* Toggle Button to simulate navigating away and back */}
-        <button 
-          onClick={() => setShowPosts(!showPosts)}
-          style={{ marginBottom: '20px', padding: '10px', cursor: 'pointer' }}
-        >
-          {showPosts ? 'Hide Posts' : 'Show Posts (Test Cache)'}
-        </button>
-
-        {showPosts && <PostsComponent />}
+        {/* 3. Render your component */}
+        <PostsComponent />
       </div>
     </QueryClientProvider>
   );
