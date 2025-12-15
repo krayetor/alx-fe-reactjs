@@ -3,40 +3,43 @@ import Profile from './components/Profile';
 import BlogPost from './components/BlogPost';
 import ProtectedRoute from './components/ProtectedRoute';
 
-// Simple components for testing
-const Home = () => <h2>Home Page (Public)</h2>;
-const ProfileDetails = () => <p>Here are the user details.</p>;
-const ProfileSettings = () => <p>Change your settings here.</p>;
+// Simple Home Component
+const Home = () => (
+  <div style={{ padding: '20px' }}>
+    <h2>Home Page</h2>
+    <p>Welcome to the public home page.</p>
+  </div>
+);
 
 function App() {
   return (
     <BrowserRouter>
-      <div style={{ padding: '20px' }}>
+      <div style={{ fontFamily: 'Arial, sans-serif' }}>
         {/* Navigation Menu */}
-        <nav style={{ marginBottom: '20px', borderBottom: '1px solid #ddd', paddingBottom: '10px' }}>
+        <nav style={{ padding: '20px', backgroundColor: '#f4f4f4', marginBottom: '20px' }}>
           <Link to="/" style={{ marginRight: '15px' }}>Home</Link>
           <Link to="/profile" style={{ marginRight: '15px' }}>Profile (Protected)</Link>
           <Link to="/blog/1" style={{ marginRight: '15px' }}>Blog Post 1</Link>
           <Link to="/blog/2">Blog Post 2</Link>
         </nav>
 
+        {/* Route Definitions */}
         <Routes>
           {/* Public Route */}
           <Route path="/" element={<Home />} />
 
-          {/* Protected Route with Nested Routes */}
+          {/* Protected Route:
+            Note the "*" in "/profile/*". This tells React Router that
+            the Profile component has its own nested routes inside it.
+          */}
           <Route 
             path="/profile/*" 
             element={
               <ProtectedRoute>
                 <Profile />
               </ProtectedRoute>
-            }
-          >
-            {/* These routes are relative to /profile */}
-            <Route path="details" element={<ProfileDetails />} />
-            <Route path="settings" element={<ProfileSettings />} />
-          </Route>
+            } 
+          />
 
           {/* Dynamic Route */}
           <Route path="/blog/:id" element={<BlogPost />} />
